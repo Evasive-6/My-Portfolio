@@ -26,6 +26,15 @@
   cursor: default;
   user-select: none;
   text-shadow: 0 0 8px #ffcc00;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15, #f97316);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 10s ease infinite;
+  transition: text-shadow 0.3s ease;
+}
+.navbar-logo:hover {
+  text-shadow: 0 0 15px #ffcc00, 0 0 25px #facc15;
 }
 
 .navbar-links {

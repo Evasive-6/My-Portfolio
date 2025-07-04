@@ -234,16 +234,50 @@
   flex-direction: column;
   justify-content: space-between;
   color: #eee;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80, #facc15, #f97316);
+  background-size: 400% 400%;
+  animation: gradient-move 15s ease infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  border-radius: 16px;
+  z-index: 0;
+}
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px #ff6ec4, 0 0 40px #7873f5;
+  cursor: pointer;
+  z-index: 1;
 }
 .project-card h3 {
   margin-top: 0;
   color: #facc15;
   text-shadow: 0 0 8px #facc15;
+  position: relative;
+  z-index: 2;
 }
 .project-card p {
   flex-grow: 1;
   color: #ddd;
   margin: 1rem 0;
+  position: relative;
+  z-index: 2;
 }
 .project-link {
   align-self: flex-start;
@@ -255,6 +289,8 @@
   font-weight: 700;
   box-shadow: 0 0 15px #f97316;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 .project-link:hover, .animated-project-link:hover {
   background: linear-gradient(45deg, #facc15, #f97316);
